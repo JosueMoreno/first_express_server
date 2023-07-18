@@ -1,5 +1,4 @@
 const express = require('express');
-const functions = require('firebase-functions');
 
 const path = require('path');
 require('dotenv').config();
@@ -18,7 +17,5 @@ app.use(express.static(publicPath));
 server.listen(port, (err) => {
     if (err) throw Error(err);
 
-    console.log('Servidor corriendo en puerto', process.env.PORT);
+    console.log('Servidor corriendo en puerto', port);
 });
-
-exports.api = functions.https.onRequest(app);
